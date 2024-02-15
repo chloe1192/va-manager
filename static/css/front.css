@@ -1,0 +1,52 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+.booked-flight .departure,
+.booked-flight .arrival,
+.booked-flight .flight-info {
+    float: left;
+    width: calc(100% / 3);
+}
+
+.booked-flight {
+    box-shadow: black 1px 1px 5px;
+    border-radius: 15px;
+    width: calc(100% / 3);
+}
+
+.booked-flight .box-title h3 {
+    border-bottom: black 1px 1px;
+    font-size: 25px;
+}
+
+.booked-flight .box-content span {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+
+.about {
+    color: #fff;
+}
+
+.stat-box {
+    box-shadow: black 1px 1px 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.footer {
+    background-color: #555;
+    color: #fff;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.footer .copyright {
+    text-align: center;
+}

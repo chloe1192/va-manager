@@ -1,0 +1,52 @@
+{% extends "layout.html"%}
+{% block title %}Users{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <div class="col-12">
+            <div class="pie-chart">
+                Total of users
+            </div>
+            <div class="pie-chart">
+                Total of hours
+            </div>
+            <div class="pie-chart">
+                Users online
+            </div>
+            <div class="pie-chart">
+                Flights today
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Departure</th>
+                    <th scope="col">Arrival</th>
+                    <th scope="col">Flt number</th>
+                    <th scope="col">Block time</th>
+                    <th scope="col">Departure time</th>
+                    <th scope="col">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for route in routes %}
+                    <tr>
+                        <th scope="row">{{ route['departure'] }}</th>
+                        <th scope="row">{{ route['arrival'] }}</th>
+                        <th scope="row">{{ route['flt_number'] }}</th>
+                        <th scope="row">03:30</th>
+                        <th scope="row">{{ route['off_block_time'] }}</th>
+                        <th scope="row">
+                            <a href="#">Edit</a>
+                            <a href="#">Delete</a>
+                        </th>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}

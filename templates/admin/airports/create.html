@@ -1,0 +1,32 @@
+{% extends "admin/layout.html" %}
+{% block title%}Create airport{% endblock %}
+{% block content %}
+<form class="row" method="post">
+
+    <div class="form-group col-6">
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">ICAO code</label>
+                <input class="form-control" type="text" value="1">
+            </div>
+            <div class="col">
+                <label class="form-label">IATA code</label>
+                <input class="form-control" type="text" id="engine" name="engine" value="GEnx-2B67">
+            </div>
+            <div class="col">
+                <label class="form-label">Name</label>
+                <input class="form-control" type="text" id="engine" name="engine" value="GEnx-2B67">
+            </div>
+            <div class="col">
+                <label class="form-label">Country</label>
+                <input class="form-control" type="text" id="reg" name="reg" value="LX-">
+            </div>
+            <div class="col">
+                <label class="form-label">Is Hub</label>
+                <input class="form-control" type="text" id="name" name="name" value="Queen">
+            </div>
+        </div>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

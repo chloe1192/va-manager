@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title%}Create airframe{% endblock %}
+{% block content %}
+<form class="row" method="post">
+
+    <!-- Registraion section -->
+    <div class="form-group col-6">
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">ICAO code</label>
+                <input class="form-control" type="text" value="1">
+            </div>
+            <div class="col">
+                <label class="form-label">Engine</label>
+                <input class="form-control" type="text" id="engine" name="engine" value="GEnx-2B67">
+            </div>
+            <div class="col">
+                <label class="form-label">Registration</label>
+                <input class="form-control" type="text" id="reg" name="reg" value="LX-">
+            </div>
+            <div class="col">
+                <label class="form-label">Name</label>
+                <input class="form-control" type="text" id="name" name="name" value="Queen">
+            </div>
+        </div>
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">Fleet number</label>
+                <input class="form-control" type="text" id="fleet" name="fleet" value="1XXX">
+            </div>
+            <div class="col">
+                <label class="form-label">SELCAL</label>
+                <input class="form-control" type="text" id="selcal" name="selcal" value="AAAA">
+            </div>
+            <div class="col">
+                <label class="form-label">MODE S</label>
+                <input class="form-control" type="text" id="modes" name="modes" value="XXXXXX">
+            </div>
+        </div>
+    </div>
+    <!-- Ends info section -->
+    
+    <!-- Weights section -->
+    <div class="form-group col-6">
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">Units</label>
+                <select class="form-select" id="units" name="units">
+                    <option value="1">KG</option>
+                    <option value="0">LBS</option>
+                </select>
+            </div>
+            <div class="col">
+                <label class="form-label">Cabin Layout</label>
+                <input class="form-control" type="text" value="cargo">
+            </div>
+            <div class="col">
+                <label class="form-label">Pax weight</label>
+                <input class="form-control" type="text" value="80">
+            </div>
+        </div>
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">DEW</label>
+                <input class="form-control" type="text" value="42000">
+            </div>
+            <div class="col">
+                <label class="form-label">OEW</label>
+                <input class="form-control" type="text" value="44029">
+            </div>
+            <div class="col">
+                <label class="form-label">MZFW</label>
+                <input class="form-control" type="text" value="64000">
+            </div>
+            <div class="col">
+                <label class="form-label">MTOW</label>
+                <input class="form-control" type="text" value="77500">
+            </div>
+            <div class="col">
+                <label class="form-label">MLW</label>
+                <input class="form-control" type="text" value="64500">
+            </div>
+        </div>
+    </div>
+    <!-- Ends weights section -->
+    
+    <!-- Cetifications section -->
+    <div class="form-group">
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">ETOPS certification</label>
+                <input class="form-control" type="number" id="etops_cert" name="etops_cert" value="330">
+            </div>
+            <div class="col">
+                <label class="form-label">PBN</label>
+                <input class="form-control" type="number"value="A1B1C1D1O1S1">
+            </div>
+            <div class="col">
+                <label class="form-label">Transponder</label>
+                <input class="form-control" type="number" value="LB1">
+            </div>
+            <div class="col">
+                <label class="form-label">Equipment</label>
+                <input class="form-control" type="number" value="SDE3FGHIRWY">
+            </div>
+        </div>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

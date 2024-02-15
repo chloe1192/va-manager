@@ -1,0 +1,24 @@
+body {
+    background: #413f3f;
+    color: #e7e3e3;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.dashboard-sidebar {
+    box-shadow: 2px 0px 6px #0d0c0c;
+    color: #fff;
+    width: 280px;
+}
+.content {
+    margin-top: 25px;
+}
+.stat-box {
+    background-color: #333131;
+    border-radius: 15px;
+    padding: 15px 35px;
+}

@@ -15,5 +15,8 @@ def fleet():
     for row in res:
         row_as_dict = row._mapping
         airframes_dict.append(row_as_dict)
-    fleet = set(airframes_dict)
-    return render_template("front/fleet.html")
+    unique_types = set()
+    for dic in airframes_dict:
+        unique_types.add((dic['name'] , dic['id']))
+            
+    return render_template("front/fleet.html", unique_types=unique_types)

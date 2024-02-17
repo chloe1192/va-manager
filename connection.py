@@ -2,18 +2,18 @@ from sqlalchemy import create_engine, text
 
 engine = create_engine("mysql+pymysql://root:MyNewPass@localhost:3336/sql_aircraft?charset=utf8mb4")
 
-with engine.connect() as conn:
-    result = conn.execute(text("SELECT * FROM aircraft_type "))
-    result_all = result.all()
-    for row in result_all:
-        row_as_dict = row._mapping
+# with engine.connect() as conn:
+    # result = conn.execute(text("SELECT * FROM aircraft_type "))
+    # result_all = result.all()
+    # for row in result_all:
+        # row_as_dict = row._mapping
 
 # airframe db operators
 def fetch_all_airframes():
     with engine.connect() as conn:
-        query = "SELECT * FROM airframes"
-        result = conn.execute(text(query))
-        return result.all()
+        result = conn.execute(text("SELECT * FROM airframes a RIGHT JOIN aircraft_type at on a.id_aircraft_type = at.id"))
+        result_all = result.all()
+        return result_all
 
 def fetch_single_airframe(aiframe_id):
     with engine.connect() as conn:
@@ -78,6 +78,13 @@ def delete_route():
 def select_all_from(table):
     with engine.connect() as conn:
         query = f"SELECT * FROM {table}"
+        result = conn.execute(text(query))
+        return result.all()
+    
+# list single
+def select_all_from_where_id(table, id):
+    with engine.connect() as conn:
+        query = f"SELECT * FROM {table} WHERE id={id}"
         result = conn.execute(text(query))
         return result.all()
 

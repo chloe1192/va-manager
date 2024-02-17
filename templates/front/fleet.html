@@ -1,9 +1,12 @@
+{% extends "base.html" %}
 {% block content %}
 <div class="content">
     <div class="container">
 
-        <ul>
-            
+        <ul class="type-list">
+            {% for type in unique_types | sort  %}
+            <li><a href="#">{{type[0]}}</a></li>
+            {% endfor %}
         </ul>
 
     </div>

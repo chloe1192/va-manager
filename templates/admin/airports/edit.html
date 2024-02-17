@@ -1,0 +1,32 @@
+{% extends "admin/layout.html" %}
+{% block title%}Create airport{% endblock %}
+{% block content %}
+<form class="row" method="post">
+
+    <div class="form-group col-6">
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">ICAO code</label>
+                <input class="form-control" type="text" id="icao_code" name="icao_code" value="{{airport[0]['icao_code']}}">
+            </div>
+            <div class="col">
+                <label class="form-label">IATA code</label>
+                <input class="form-control" type="text" id="iata_code" name="iata_code" value="{{airport[0]['iata_code']}}">
+            </div>
+            <div class="col">
+                <label class="form-label">Name</label>
+                <input class="form-control" type="text" id="name" name="name" value="{{airport[0]['name']}}">
+            </div>
+            <div class="col">
+                <label class="form-label">Country</label>
+                <input class="form-control" type="text" id="country" name="country" value="{{airport[0]['country']}}">
+            </div>
+            <div class="col">
+                <label class="form-label">Is Hub</label>
+                <input class="form-control" type="text" id="is_hub" name="is_hub" value="{{airport[0]['is_hub']}}">
+            </div>
+        </div>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

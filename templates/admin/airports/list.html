@@ -26,8 +26,8 @@
                             <th scope="row">{{ airport['iata_code'] }}</th>
                             <th scope="row">{{ airport['country'] }}</th>
                             <th scope="row">
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
+                                <a href="{{ url_for('admin.edit_airport', airport_id=airport['id']) }}">Edit</a>
+                                <a href="{{ url_for('admin.delete_airport', __METHOD_OVERRIDE__='POST', airport_id=airport['id']) }}">Delete</a>
                             </th>
                         </tr>
                         {% endfor %}

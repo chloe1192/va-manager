@@ -1,0 +1,24 @@
+{% extends "admin/layout.html" %}
+{% block title %}Edit Type{% endblock %}
+{% block content %}
+<form class="row" method="post">
+
+    <div class="form-group col-6">
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">Name</label>
+                <input class="form-control" type="text" id="name" name="name" value="{{types[0]['name']}}">
+            </div>
+            <div class="col">
+                <label class="form-label">MZFW</label>
+                <input class="form-control" type="text" id="mzfw" name="mzfw" value="{{types[0]['mzfw']}}">
+            </div>
+            <div class="col">
+                <label class="form-label">MTOW</label>
+                <input class="form-control" type="text" id="mtow" name="mtow" value="{{types[0]['mtow']}}">
+            </div>
+        </div>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

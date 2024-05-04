@@ -1,4 +1,5 @@
 {% extends "admin/layout.html" %}
+{% block title %}List Types{% endblock %}
 {% block content %}
 <div class="container padding py-5">
     <table class="table">
@@ -11,14 +12,14 @@
             </tr>
         </thead>
         <tbody>
-                {% for airframe in airframes %}
+                {% for type in types %}
                 <tr>
                     <th scope="row">{{ loop.index }}</th>
-                    <td>{{ airframe['engine'] }}</td>
-                    <td>{{ airframe['name'] }}</td>
-                    <td>{{ airframe['reg'] }}</td>
-                    <td><a href="edit-airframe/{{ airframe['id'] }}">Edit</a></td>
-                    <td><a href="delete-airframe/{{ airframe['id'] }}">Delete</a></td>
+                    <td>{{ type['name'] }}</td>
+                    <td>{{ type['mzfw'] }}</td>
+                    <td>{{ type['mtow'] }}</td>
+                    <td><a href="edit/{{ type['id'] }}">Edit</a></td>
+                    <td><a href="delete/{{ type['id'] }}">Delete</a></td>
                 </tr>
                 {% endfor %}
         </tbody>

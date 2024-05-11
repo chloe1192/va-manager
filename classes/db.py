@@ -40,7 +40,7 @@ class DbQuery():
             values += str(f"'{value}', ")
         keys = keys[:-2]
         values = values[:-2]
-        query = f"INSERT INTO `{table}` ({keys}) VALUES ({values});"
+        query = f"INSERT INTO `{table}` ({keys}) VALUES ({values})"
         self.connect_to_engine(query)
     
     def update_where(self, table, query, id):

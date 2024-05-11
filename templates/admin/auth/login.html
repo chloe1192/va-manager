@@ -1,0 +1,27 @@
+{% extends "admin/auth/layout.html" %}
+{% block content %}
+<div class="container py-5">
+    <form class="login-form">
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" class="email form-control col-12" placeholder="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password</label>
+            <input id="pwd" name="pwd" type="password" class="pwd form-control col-12" placeholder="password">
+        </div>
+        <div class="form-group row py-1 px-3">
+            <div class="form-check col-6">
+                <input type="checkbox" class="form-check-input" id="keepMeIn">
+                <label class="form-check-label" for="keepMeIn">Keep me logged in</label>
+            </div>
+            <div class="col-6">
+                Don't have an account? <a href="{{ url_for('admin.register_page') }}">Register now</a>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+{% endblock %}

@@ -9,6 +9,15 @@ db = DbQuery()
 def dashboard():
     return render_template("admin/dashboard.html")
 
+# authentication pages
+@admin.route('/login', methods=['GET', 'POST'])
+def login_page():
+    return render_template("admin/auth/login.html")
+
+@admin.route('/register', methods=['GET', 'POST'])
+def register_page():
+    return render_template("admin/auth/register.html")
+
 # users
 @admin.route('/users', methods=['GET', 'POST'])
 def list_all_users():

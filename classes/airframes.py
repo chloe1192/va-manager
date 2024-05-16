@@ -1,3 +1,6 @@
+from db import DbQuery
+
+
 class Airframes():
     def __init__(self, id_type, engine, reg, name, fleet, selcal, modeS, units, etops_cert):
         self.id_type = id_type

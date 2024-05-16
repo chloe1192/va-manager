@@ -4,10 +4,7 @@ import hashlib
 class Users:
 
     def __init__(self):
-        self.create_table()
-    
-    def create_table(self):
-        DbQuery().connect_to_engine(f"CREATE TABLE IF NOT EXISTS users (id int NOT NULL PRIMARY KEY AUTO INCREMENT, name varchar(255), email varchar(255), pwd varchar(255))")
+        pass
 
     def create_user(self, query):
         keys = ""

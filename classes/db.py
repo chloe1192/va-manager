@@ -1,20 +1,23 @@
 from sqlalchemy import create_engine, text
 class DbQuery():
-
+    engine = create_engine("mysql+pymysql://root:MyNewPass@localhost:3336/sql_aircraft?charset=utf8mb4")
     def __init__(self):
-        self.engine = create_engine("mysql+pymysql://root:MyNewPass@localhost:3336/sql_aircraft?charset=utf8mb4")
+        pass
 
-    def create_tables():
-        db_init = """
-            CREATE TABLE IF NOT EXISTS types (
-                id_typesint NOT NUL PRIMARY KEY,
-                name varchar(255),
-                icao varchar(4),
+    def create_table(self, table, fields):
+        query = ""
+        for row in fields:
+            query += f"{row}, "
+        db_init = f"""
+            CREATE TABLE IF NOT EXISTS {table} (
+                {query}
             );
         """
+        self.connect_to_engine(db_init)
 
-    def connect_to_engine(self, query, want_res=False):
-        with self.engine.connect() as conn:
+    @staticmethod
+    def connect_to_engine( query, want_res=False):
+        with DbQuery.engine.connect() as conn:
             res = conn.execute(text(query))
             conn.commit()
             if want_res == True:

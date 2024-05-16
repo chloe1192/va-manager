@@ -1,3 +1,6 @@
+from db import DbQuery
+
+
 class Flights():
     def __init__(self, departure_airport, destination_airport, flt_number, off_block_time, takeoff_time, callsign):
         self.departure_airport = departure_airport

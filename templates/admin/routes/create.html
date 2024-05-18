@@ -1,0 +1,51 @@
+{% extends "admin/layout.html" %}
+{% block title%}Create airframe{% endblock %}
+{% block content %}
+<form class="row" method="post">
+
+    <div class="form-group col-6">
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">FLT number</label>
+                <input class="form-control" type="text" id="flight_number" name="flight_number" value="XX0000">
+            </div>
+            <div class="col">
+                <label class="form-label">Callsign</label>
+                <input class="form-control" type="text" id="callsign" name="callsign" value="XXX0000">
+            </div>
+            <div class="col">
+                <label class="form-label">Departure airport</label>
+                <input class="form-control" type="text" id="departure_airport" name="departure_airport" value="XXXX">
+            </div>
+            <div class="col">
+                <label class="form-label">Arrival airport</label>
+                <input class="form-control" type="text" id="arrival_airport" name="arrival_airport" value="XXXX">
+            </div>
+        </div>
+        <div class="row mb-3 px-5">
+            <div class="col">
+                <label class="form-label">Off block time</label>
+                <input class="form-control" type="text" id="off_block_time" name="off_block_time" value="0000">
+            </div>
+            <div class="col">
+                <label class="form-label">Takeoff time</label>
+                <input class="form-control" type="text" id="takeoff_time" name="takeoff_time" value="0000">
+            </div>
+            <div class="col">
+                <label class="form-label">Landing time</label>
+                <input class="form-control" type="text" id="landing_time" name="landing_time" value="0000">
+            </div>
+            <div class="col">
+                <label class="form-label">On block time</label>
+                <input class="form-control" type="text" id="on_block_time" name="on_block_time" value="0000">
+            </div>
+            <div class="col">
+                <label class="form-label">Cost index</label>
+                <input class="form-control" type="text" id="cost_index" name="cost_index" value="XXXXXX">
+            </div>
+        </div>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

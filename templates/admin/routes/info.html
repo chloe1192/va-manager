@@ -1,0 +1,30 @@
+{% extends "admin/layout.html" %}
+{% block title %}{{ route['flight_number'] }}{% endblock %}
+{% block content %}
+<div class="container padding py-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">FLT number</th>
+                <th scope="col">Callsign</th>
+                <th scope="col">Origin</th>
+                <th scope="col">Destination</th>
+                <th>
+                    <a href="{{ route['id_route'] }}">Info</a>
+                    <a href="edit/{{ route['id_route'] }}">Edit</a>
+                    <a href="delete/{{ route['id_route'] }}">Delete</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ route['flight_number'] }}</td>
+                    <td>{{ route['callsign'] }}</td>
+                    <td>{{ route['departure_icao'] }}</td>
+                    <td>{{ route['arrival_icao'] }}</td>
+                    <td></td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

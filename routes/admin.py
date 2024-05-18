@@ -1,6 +1,7 @@
 from flask import Blueprint, app, redirect, render_template, request
 from classes.db import DbQuery
 import connection
+from classes.routes import Routes
 
 admin = Blueprint("admin", __name__, static_folder="static", template_folder="templates/admin")
 db = DbQuery()
@@ -94,7 +95,6 @@ def list_all_airframes():
     for row in airframe_list:
         row_as_dict = row._mapping
         airframes_dict.append(row_as_dict)
-    print(airframes_dict)
     return render_template("admin/airframes/list.html", airframes=airframes_dict)
 
 @admin.route('/airframes/create', methods=['GET', 'POST'])
@@ -143,3 +143,15 @@ def delete_type(types_id=0):
     if request.method == "POST":
         db.delete_where("types", types_id)
         return redirect(list_all_aircraft_types())
+    
+#routes
+@admin.route('routes/list', methods=['GET'])
+def list_all_routes():
+    routes = Routes().get_all_routes()
+    return render_template("admin/routes/list.html", routes=routes)
+
+@admin.route('routes/<id_route>', methods=['GET'])
+def info_route(id_route=0):
+    routes = Routes().get_single_route(id_route)
+    print(routes)
+    return render_template("admin/routes/info.html", route=routes[0])

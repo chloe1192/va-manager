@@ -1,17 +1,14 @@
 from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
 class DbQuery():
 
     def __init__(self):
-        self.engine = create_engine("mysql+pymysql://root:MyNewPass@localhost:3336/sql_aircraft?charset=utf8mb4")
+        self.engine = create_engine("mysql+pymysql://root:MyNewPass@localhost:3336/sql_va_manager?charset=utf8mb4")
 
-    def create_tables():
-        db_init = """
-            CREATE TABLE IF NOT EXISTS types (
-                id_typesint NOT NUL PRIMARY KEY,
-                name varchar(255),
-                icao varchar(4),
-            );
-        """
+    def create_session_binding(self):
+        Session = sessionmaker(bind = self.engine)
+        session = Session()
+        return session
 
     def connect_to_engine(self, query, want_res=False):
         with self.engine.connect() as conn:

@@ -1,4 +1,7 @@
-class Types():
+from db import DbQuery
+
+
+class AircraftTypes():
     def __init__(self, name, icao, dew, mzfw, oew, mtow, mlw, max_fuel, min_runway):
         self.name = name
         self.icao = icao

@@ -155,3 +155,15 @@ def info_route(id_route=0):
     routes = Routes().get_single_route(id_route)
     print(routes)
     return render_template("admin/routes/info.html", route=routes[0])
+
+@admin.route('routes/edit/<id_route>', methods=['GET', 'POST'])
+def edit_route(id_route=0):
+    airports = Routes().get_airports_for_route()
+    current_route = Routes().get_single_route(id_route)
+    return render_template('admin/routes/edit.html', airports=airports, route=current_route)
+
+@admin.route('routes/create', methods=['GET', 'POST'])
+def create_route():
+    #if (request.method = 'POST'):
+        #Routes().insert_route
+    pass

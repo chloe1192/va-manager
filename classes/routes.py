@@ -1,3 +1,4 @@
+from airports import Airports
 from classes.db import DbQuery
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey
@@ -41,3 +42,9 @@ class Routes(DbQuery):
             row_as_dict = row._mapping
             dict.append(row_as_dict)
         return res
+    
+    @staticmethod
+    def get_airports_for_route():
+        res = Airports().get_airports_icao()
+        return res
+

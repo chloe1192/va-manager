@@ -1,10 +1,6 @@
-from airports import Airports
-from classes.db import DbQuery
+from .airports import Airports
+from .db import DbQuery
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -41,10 +37,29 @@ class Routes(DbQuery):
         for row in res:
             row_as_dict = row._mapping
             dict.append(row_as_dict)
-        return res
+        return dict
     
     @staticmethod
     def get_airports_for_route():
         res = Airports().get_airports_icao()
         return res
+    
+    def update_route(self, form, id):
+        print(form)
+        query = f"""
+            UPDATE routes
+            SET
+                flight_number = "{form['flight_number']}",
+                callsign = "{form['callsign']}",
+                off_block_time = "{form['off_block_time']}",
+                takeoff_time = "{form['takeoff_time']}",
+                landing_time = "{form['landing_time']}",
+                on_block_time = "{form['on_block_time']}",
+                cost_index = "{form['cost_index']}",
+                altitude = "{form['altitude']}",
+                route_fixes = "{form['route_fixes']}"
+            WHERE id_route = {id}
+        """
+        self.connect_to_engine(query)
+        return self.get_all_routes()
 

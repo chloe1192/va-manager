@@ -16,33 +16,41 @@
             </div>
             <div class="col">
                 <label class="form-label">Departure airport</label>
-                <input class="form-control" type="text" id="departure_airport" name="departure_airport" value="XXXX">
+                <input class="form-control" type="search" id="departure_airport" name="departure_airport" value="{{ route['departure_airport'] }}">
             </div>
             <div class="col">
                 <label class="form-label">Arrival airport</label>
-                <input class="form-control" type="text" id="arrival_airport" name="arrival_airport" value="XXXX">
+                <input class="form-control" type="search" id="arrival_airport" name="arrival_airport" value="{{ route['arrival_airport'] }}">
             </div>
         </div>
         <div class="row mb-3 px-5">
             <div class="col">
                 <label class="form-label">Off block time</label>
-                <input class="form-control" type="text" id="off_block_time" name="off_block_time" value="0000">
+                <input class="form-control" type="time" id="off_block_time" name="off_block_time" value="{{ route['off_block_time'] }}">
             </div>
             <div class="col">
                 <label class="form-label">Takeoff time</label>
-                <input class="form-control" type="text" id="takeoff_time" name="takeoff_time" value="0000">
+                <input class="form-control" type="time" id="takeoff_time" name="takeoff_time" value="{{ route['takeoff_time'] }}">
             </div>
             <div class="col">
                 <label class="form-label">Landing time</label>
-                <input class="form-control" type="text" id="landing_time" name="landing_time" value="0000">
+                <input class="form-control" type="time" id="landing_time" name="landing_time" value="{{ route['landing_time'] }}">
             </div>
             <div class="col">
                 <label class="form-label">On block time</label>
-                <input class="form-control" type="text" id="on_block_time" name="on_block_time" value="0000">
+                <input class="form-control" type="time" id="on_block_time" name="on_block_time" value="{{ route['on_block_time'] }}">
             </div>
             <div class="col">
                 <label class="form-label">Cost index</label>
-                <input class="form-control" type="text" id="cost_index" name="cost_index" value="XXXXXX">
+                <input class="form-control" type="text" id="cost_index" name="cost_index" value="{{ route['cost_index'] }}">
+            </div>
+            <div class="col">
+                <label class="form-label">Altitude</label>
+                <input class="form-control" type="textarea" id="altitude" name="altitude" value="{{ route['altitude'] }}">
+            </div>
+            <div class="col">
+                <label class="form-label">Route</label>
+                <input class="form-control" type="textarea" id="route_fixes" name="route_fixes" value="{{ route['route_fixes'] }}">
             </div>
         </div>
     </div>

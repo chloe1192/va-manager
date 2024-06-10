@@ -160,7 +160,11 @@ def info_route(id_route=0):
 def edit_route(id_route=0):
     airports = Routes().get_airports_for_route()
     current_route = Routes().get_single_route(id_route)
-    return render_template('admin/routes/edit.html', airports=airports, route=current_route)
+    print(current_route)
+    if (request.method == 'POST'):
+        Routes().update_route(request.form, id_route)
+        return redirect("/admin/routes/list")
+    return render_template('admin/routes/edit.html', airports=airports, route=current_route[0])
 
 @admin.route('routes/create', methods=['GET', 'POST'])
 def create_route():

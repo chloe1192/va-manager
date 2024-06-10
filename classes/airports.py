@@ -1,9 +1,8 @@
-from db import DbQuery
+from .db import DbQuery
 
 
 class Airports(DbQuery):
 
-    @staticmethod
     def get_airports_icao(self):
         query = """
             SELECT id_airport, icao_code FROM airports

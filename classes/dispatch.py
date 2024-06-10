@@ -1,8 +1,7 @@
-from classes.airframes import Airframes
-from classes.airports import Airports
+from .airports import Airports
 import requests
 
-class Dispatch(Airframes, Airports):
+class Dispatch(Airports):
 
     def __init__(self):
         pass

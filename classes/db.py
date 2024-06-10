@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, exc
 class DbQuery():
 
     def __init__(self):
@@ -12,8 +12,11 @@ class DbQuery():
 
     def connect_to_engine(self, query, want_res=False):
         with self.engine.connect() as conn:
-            res = conn.execute(text(query))
-            conn.commit()
+            try:
+                res = conn.execute(text(query))
+                conn.commit()
+            except exc.UnmappedError as e :
+                return e
             if want_res == True:
                 return res.all()
 
